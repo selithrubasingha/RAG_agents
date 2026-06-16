@@ -37,3 +37,14 @@ while user_input.lower() != "exit":
     result = agent.invoke({"messages": conversation_history})
     conversation_history = result["messages"]
     user_input = input("Enter: ")
+
+with open("conversation_history.txt", "w") as f:
+    for message in conversation_history:
+        if isinstance(message, HumanMessage):
+            f.write(f"User: {message.content}\n")
+        elif isinstance(message, AIMessage):
+            f.write(f"Agent: {message.content}\n")
+    
+    f.write("\n--- End of Conversation ---\n")
+
+print("Conversation history saved to conversation_history.txt")
