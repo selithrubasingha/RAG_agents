@@ -19,3 +19,5 @@ from tavily import TavilyClient
 # --- 1. GEMINI IMPORTS ---
 from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
+
+load_dotenv()  # Load environment variables from .env file

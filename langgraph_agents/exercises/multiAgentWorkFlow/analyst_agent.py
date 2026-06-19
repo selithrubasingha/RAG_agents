@@ -10,5 +10,5 @@ analyst_prompt = "You are the Senior Data Analyst. Query the SQL database to fin
 compiled_analyst = create_react_agent(
     model, 
     tools=analyst_tools, 
-    state_modifier=analyst_prompt
+    prompt=analyst_prompt
 )

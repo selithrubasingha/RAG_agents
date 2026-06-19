@@ -15,8 +15,7 @@ class RouterDecision(BaseModel):
         description="Select the next worker needed to fulfill the user's request, or FINISH if the final report can be generated from the current messages."
     )
 
-model = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.1)
-
+model = ChatGoogleGenerativeAI(model="gemini-3-flash", temperature=0.1)
 # --- 2. The Supervisor Node ---
 def supervisor_node(state: GlobalState) -> dict:
     system_prompt = """You are the Supervisor of an Intelligent Land Investment System.
